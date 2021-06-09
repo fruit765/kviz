@@ -1,7 +1,11 @@
+import Header from "./components/Header/Header";
+import Slides from "./components/Slides/Slides";
+
 function App() {
   return (
     <div className="App">
-      Квиз
+      <Header />
+      <Slides />
     </div>
   );
 }
