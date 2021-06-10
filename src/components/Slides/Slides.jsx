@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import React, { useReducer } from "react";
 
 import './Slides.scss';
 
@@ -7,10 +7,15 @@ import Slide2 from "../Slide2/Slide2";
 
 function reducer(state, action) {
     switch (action.type) {
+        case 'CHANGE_SLIDE':
+            state.slideNum = state.slideNum + 1;
+            return {...state};
         default:
             return state;
     }
 }
+
+export const SlidesContext = React.createContext();
 
 export default function Slides() {
     const initialState = {
@@ -34,7 +39,9 @@ export default function Slides() {
 
     return (
         <div className="slides">
-            {slide}
+            <SlidesContext.Provider value={dispatch} >
+                {slide}
+            </SlidesContext.Provider>
         </div>
     );
 }
