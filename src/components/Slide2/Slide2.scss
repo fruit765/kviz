@@ -1,0 +1,106 @@
+.slide2 {
+
+    height: 100%;
+
+    &__front-background {
+
+        height: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .slide2 {
+
+        &__front-background {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('../../imgs/front-background.svg');
+            background-repeat: no-repeat;
+            background-position: 50% 30px;
+            background-size: 1100px auto;
+        }
+
+        &__wrapper {
+
+            width: 622px;
+            height: 537px;
+        }
+
+        &__wrapper-title {
+
+            font-style: normal;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 31px;
+            text-align: center;
+            color: #432F21;
+            margin-top: 55px;
+        }
+
+        &__wrapper-imgs {
+
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        &__wrapper-img {
+
+            img {
+
+                display: block;
+            }
+
+            &:nth-child(1), &:nth-child(2) {
+
+                img {
+
+                    max-width: 234px;
+                }
+            }
+        }
+
+        &__wrapper-answers {
+
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            left: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        &__wrapper-answer {
+
+            background-color: #FFFFFF;
+            border: 2px solid #B2B2B2;
+            box-sizing: border-box;
+            border-radius: 15px;
+            height: 85px;
+            line-height: 81px;
+            font-size: 20px;
+            width: 150px;
+            cursor: pointer;
+
+            &:first-child {
+
+                margin-right: 60px;
+            }
+
+            &_is-pick {
+
+                background-color: #F0AA87;
+            }
+        }
+
+        &__wrapper-btn {
+
+            text-align: center;
+        }
+    }
+}
