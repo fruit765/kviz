@@ -6,22 +6,8 @@ import { useContext, useState } from 'react';
 import cl from 'classnames';
 import { SlidesContext } from '../Slides/Slides';
 
-export default function Slide2() {
-    const [question, changeQuestion] = useState({
-        title: 'Какой у вас питомец?',
-        type: 'inform',
-        answers: [
-            {
-                title: 'Кошка',
-                isPick: false,
-            },
-            {
-                title: 'Собака',
-                isPick: false,
-            },
-        ],
-    });
-
+export default function Slide2(props) {
+    const question = props.questions[props.qIndex];
     const dispatch = useContext(SlidesContext);
 
     let answers = [];
@@ -34,7 +20,7 @@ export default function Slide2() {
                         answer.isPick = false;
                     }
                     q.answers[index].isPick = true;
-                    changeQuestion(q);
+                    dispatch({type: 'CHANGE_QUESTION', question: q, index:props.qIndex});
                 }}
             >
                 {el.title}
@@ -64,13 +50,32 @@ export default function Slide2() {
                     <div className="slide2__wrapper-btn">
                         <NextSlideBtn text="Далее"
                             callback={() => {
-                                dispatch({
-                                    type: 'ADD_QUESTION',
-                                    question: question,
-                                });
-                                dispatch({
-                                    type: 'CHANGE_SLIDE',
-                                });
+                                let isPick = false;
+                                let index = 0;
+                                let animal;
+                                for (let answer of question.answers) {
+                                    if (answer.isPick) {
+                                        isPick = true;
+                                        if (index === 0) {
+                                            animal = 'cat';
+                                        }
+                                        else {
+                                            animal = 'dog';
+                                        }
+                                        break;
+                                    }
+                                    index++;
+                                }
+                                if (isPick) {
+                                    dispatch({type: 'CHECK_ANIMAL', animal});
+                                    dispatch({type: 'ADD_QUESTION', question});
+                                    dispatch({
+                                        type: 'CHANGE_SLIDE',
+                                    });
+                                }
+                                else {
+                                    alert('Выберите питомца!');
+                                }
                             }}
                         />
                     </div>

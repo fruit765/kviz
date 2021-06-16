@@ -1,0 +1,131 @@
+.slide3 {
+
+    height: 100%;
+
+    &__front-background {
+
+        height: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .slide3 {
+
+        &__front-background {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('../../imgs/front-background.svg');
+            background-repeat: no-repeat;
+            background-position: 50% 30px;
+            background-size: 1100px auto;
+        }
+
+        &__wrapper {
+
+            width: 622px;
+            height: 537px;
+            padding: 0 37px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__wrapper-title {
+
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 31px;
+            text-align: center;
+            color: #432F21;
+            margin-bottom: 25px;
+        }
+
+        &__answers {
+
+            border: 1px solid #B2B2B2;
+            border-radius: 15px;
+            background-color: #fff;
+            padding: 30px;
+            display: flex;
+        }
+
+        &__answers-left, &__answers-right {
+
+            flex-basis: 50%;
+        }
+
+        &__answer {
+
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 20px;
+
+            input[type='radio'] {
+
+                display: none;
+            }
+
+            &:last-child {
+
+                margin-bottom: 0;
+            }
+
+            label {
+
+                display: block;
+                height: 23px;
+                line-height: 23px;
+                cursor: pointer;
+            }
+
+            input[type='radio']:checked + label {
+
+                .slide3__answer-input {
+
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &::before {
+
+                        content: '';
+                        display: block;
+                        width: 11px;
+                        height: 11px;
+                        border-radius: 50%;
+                        background-color: #EB824D;
+                    }
+                }
+            }
+        }
+
+        &__answer-input {
+
+            display: inline-block;
+            width: 23px;
+            height: 23px;
+            background-color: #F6F2F1;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+
+        &__btn {
+
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        &_dog {
+
+            .slide3__wrapper {
+
+                padding: 0;
+            }
+        }
+    }
+}
