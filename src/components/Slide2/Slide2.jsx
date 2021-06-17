@@ -69,9 +69,7 @@ export default function Slide2(props) {
                                 if (isPick) {
                                     dispatch({type: 'CHECK_ANIMAL', animal});
                                     dispatch({type: 'ADD_QUESTION', question});
-                                    dispatch({
-                                        type: 'CHANGE_SLIDE',
-                                    });
+                                    dispatch({type: 'CHANGE_SLIDE'});
                                 }
                                 else {
                                     alert('Выберите питомца!');

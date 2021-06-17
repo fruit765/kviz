@@ -83,9 +83,7 @@ export default function SlideCat3(props) {
                             <NextSlideBtn text="Далее"
                                 callback={() => {
                                     dispatch({type: 'ADD_QUESTION', question});
-                                    dispatch({
-                                        type: 'CHANGE_SLIDE',
-                                    });
+                                    dispatch({type: 'CHANGE_SLIDE'});
                                 }}
                             />
                         </div>
