@@ -5,6 +5,7 @@ import NextSlideBtn from '../NextSlideBtn/NextSlideBtn';
 import { useContext, useState } from 'react';
 import cl from 'classnames';
 import { SlidesContext } from '../Slides/Slides';
+import SlideNumeration from '../SlideNumeration/SlideNumeration';
 
 export default function Slide2(props) {
     const question = props.questions[props.qIndex];
@@ -77,6 +78,7 @@ export default function Slide2(props) {
                             }}
                         />
                     </div>
+                    <SlideNumeration count="13" num={props.qIndex + 1}/>
                 </div>
             </div>
         </div>

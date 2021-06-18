@@ -1,3 +1,5 @@
+@import '../../vars.scss';
+
 .slide-quick {
 
     height: 100%;
@@ -19,7 +21,7 @@
             align-items: center;
             background-image: url('../../imgs/front-background.svg');
             background-repeat: no-repeat;
-            background-position: 50% 25px;
+            background-position: 50% calc(50% + 20px);
             background-size: 1100px auto;
         }
     
@@ -30,6 +32,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
+
+            .slide-numeration {
+
+                right: -$slideNumerationRight1;
+            }
         }
 
         &__title {
@@ -116,6 +124,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
+
+            .slide-numeration {
+
+                right: -$slideNumerationRight2;
+            }
         }
 
         &__inform-img {
@@ -150,7 +164,7 @@
 
             .slide-quick__front-background {
 
-                background-position: 50% -50px;
+                background-position: 50% calc(50% + 20px);
                 background-size: 1300px auto;
             }
         }

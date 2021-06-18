@@ -8,6 +8,7 @@ import catGood from '../../imgs/slide-quick__inform-img-cat-good.svg';
 import catBad from '../../imgs/slide-quick__inform-img-cat-bad.svg';
 import dogGood from '../../imgs/slide-quick__inform-img-dog-good.svg';
 import dogBad from '../../imgs/slide-quick__inform-img-dog-bad.svg';
+import SlideNumeration from '../SlideNumeration/SlideNumeration';
 
 export default function SlideQuick(props) {
     const question = props.questions[props.qIndex][props.animal];
@@ -75,6 +76,7 @@ export default function SlideQuick(props) {
                         <div className="slide-quick__answers">
                             {answers}
                         </div>
+                        <SlideNumeration count="13" num={props.qIndex + 1}/>
                     </div>
                 }
                 {
@@ -93,6 +95,7 @@ export default function SlideQuick(props) {
                                 }}
                             />
                         </div>
+                        <SlideNumeration count="13" num={props.qIndex + 1}/>
                     </div>
                 }
             </div>
