@@ -210,12 +210,12 @@ export default function Slides() {
                         {
                             title: 'Да',
                             isPick: false,
-                            isRight: true,
+                            isRight: false,
                         },
                         {
                             title: 'Нет',
                             isPick: false,
-                            isRight: false,
+                            isRight: true,
                         },
                     ],
                     inform: {
@@ -236,12 +236,12 @@ export default function Slides() {
                         {
                             title: 'Да',
                             isPick: false,
-                            isRight: true,
+                            isRight: false,
                         },
                         {
                             title: 'Нет',
                             isPick: false,
-                            isRight: false,
+                            isRight: true,
                         },
                     ],
                     inform: {
@@ -854,6 +854,27 @@ export default function Slides() {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     function calculateResult(result) {
+        let allQuestions = 0;
+        let rightQuestions = 0;
+        for (let question of result) {
+            if (question.type === 'result') {
+                allQuestions++;
+                let isRight = false;
+                for (let answer of question.answers) {
+                    if (answer.isPick && answer.isRight) {
+                        isRight = true;
+                        break;
+                    }
+                }
+                if (isRight) {
+                    rightQuestions++;
+                }
+            }
+        }
+
+        let procent = Math.round((rightQuestions / allQuestions) * 100);
+        if (procent < 40) return 'bad';
+        if (procent >= 40 && procent < 80) return 'middle';
         return 'good';
     }
     

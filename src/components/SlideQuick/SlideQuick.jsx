@@ -13,6 +13,7 @@ export default function SlideQuick(props) {
     const question = props.questions[props.qIndex][props.animal];
     const dispatch = useContext(SlidesContext);
     const [inform, changeInform] = useState(null);
+    const [lightBtn, changeLightBtn] = useState(null);
 
     let img;
     if (props.animal === 'cat' && inform === 'good') img = catGood;
@@ -23,7 +24,7 @@ export default function SlideQuick(props) {
     let answers = [];
     question.answers.forEach((el, index) => {
         answers.push(
-            <div className="slide-quick__answer" key={index}
+            <div className={c('slide-quick__answer', lightBtn && lightBtn.index === index && `slide-quick__answer_${lightBtn.status}`)} key={index}
                 onClick={() => {
                     let q = {...question};
                     q.answers[index].isPick = true;
@@ -36,7 +37,14 @@ export default function SlideQuick(props) {
                         else {
                             inform = 'bad';
                         }
-                        changeInform(inform);
+                        changeLightBtn({
+                            status: inform,
+                            index: index,
+                        });
+                        setTimeout(() => {
+                            changeInform(inform);
+                            changeLightBtn(null);
+                        }, 500);
                     }
                     else {
                         dispatch({type: 'CHANGE_SLIDE'});
