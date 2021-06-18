@@ -8,7 +8,19 @@ import resultDogBad from '../../imgs/result-slide__square-img-dog-bad.svg';
 import resultDogMiddle from '../../imgs/result-slide__square-img-dog-middle.svg';
 import resultDogGood from '../../imgs/result-slide__square-img-dog-good.svg';
 
-export default function ResultSlide() {
+export default function ResultSlide(props) {
+    let img;
+    if (props.animal === 'cat') {
+        if (props.calculateResult === 'bad') img = resultCatBad;
+        if (props.calculateResult === 'middle') img = resultCatMiddle;
+        if (props.calculateResult === 'good') img = resultCatGood;
+    }
+    if (props.animal === 'dog') {
+        if (props.calculateResult === 'bad') img = resultDogBad;
+        if (props.calculateResult === 'middle') img = resultDogMiddle;
+        if (props.calculateResult === 'good') img = resultDogGood;
+    }
+
     return (
         <div className="result-slide">
             <div className="result-slide__back-background">
@@ -17,14 +29,15 @@ export default function ResultSlide() {
                         <div className="result-slide__wrapper-left">
                             <div className="result-slide__square">
                                 <div className="result-slide__square-img">
-                                    <img src={resultCatBad} />
+                                    <img src={img} />
                                 </div>
                                 <div className="result-slide__square-title">
-                                    Воу, да вы профи!
+                                    {props.result[props.animal][props.calculateResult].title}
                                 </div>
                                 <div className="result-slide__square-text">
-                                    Ваш котик в надежных руках, мы счастливы за него. У него есть все шансы стать долгожителем! Проявите экспертность, поделитесь своим чек-листом с другом, у которого уровень ухода за питомцем далек от вашего!
+                                    {props.result[props.animal][props.calculateResult].text}
                                 </div>
+                                <div className="result-slide__square-arrow"></div>
                             </div>
                             <div className="result-slide__share">
                                 <a href="#" className="result-slide__share-btn result-slide__share-btn_inst share-btn share-btn_inst"></a>
@@ -41,6 +54,13 @@ export default function ResultSlide() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="result-slide__site">
+                <div className="result-slide__site-wrapper section">
+                    <span>
+                        Выбирайте подходящий корм и радуйте любимца полезными вкусностями <a href="https://karmypet.ru/" target="_blank">на сайте Karmy</a>
+                    </span>
                 </div>
             </div>
         </div>

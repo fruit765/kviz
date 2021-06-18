@@ -17,6 +17,8 @@
 
     .result-slide {
 
+        position: relative;
+
         &__back-background {
 
             background-image: url('../../imgs/result-slide__back-background.svg');
@@ -49,10 +51,23 @@
 
         &__square {
 
-            background: #C4C4C4;
             width: 746px;
             height: 644px;
             padding: 0 108px;
+            position: relative;
+        }
+
+        &__square-arrow {
+
+            position: absolute;
+            width: 196px;
+            height: 97px;
+            top: 90px;
+            right: -100px;
+            background-image: url('../../imgs/result-slide__square-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 100% auto;
         }
 
         &__square-img {
@@ -64,7 +79,7 @@
 
             font-weight: bold;
             font-size: 50px;
-            line-height: 60px;
+            line-height: 50px;
             color: #432F21;
             margin-top: 20px;
             margin-bottom: 25px;
@@ -150,6 +165,29 @@
                 font-weight: bold;
                 height: 91px;
                 line-height: 91px;
+            }
+        }
+
+        &__site {
+
+            position: absolute;
+            width: 100%;
+            bottom: 37px;
+            left: 0;
+
+            span {
+
+                display: block;
+                width: 500px;
+                font-size: 20px;
+                line-height: 25px;
+                color: #432F21;
+                margin-left: auto;
+
+                a {
+
+                    color: #432F21;
+                }
             }
         }
     }

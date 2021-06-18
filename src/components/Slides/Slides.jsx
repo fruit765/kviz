@@ -820,14 +820,46 @@ export default function Slides() {
         ],
         answerQuestions: [],
         animal: null,
+        result: {
+            cat: {
+                bad: {
+                    title: 'Такой себе хозяин...',
+                    text: 'Ну, ваш котик от вас еще не сбежал - уже хорошо! Изучите информацию из чек-листа и берегите своего хзвостика, выжродитель!',
+                },
+                middle: {
+                    title: 'Вашему питомцу хорошо, но может быть лучше!',
+                    text: 'Вы не забываете кормить питомца и менять лоток, это хорошо! Но можно улучшить его настроение и здоровье, с помощью советов из нашего чек-листа.',
+                },
+                good: {
+                    title: 'Воу, да вы профи!',
+                    text: 'Ваш котик в надежных руках, мы счастливы за него. У него есть все шансы стать долгожителем! Проявите экспертность, поделитесь своим чек-листом с другом, у которого уровень ухода за питомцем далек от вашего!',
+                },
+            },
+            dog: {
+                bad: {
+                    title: 'Такой себе хозяин...',
+                    text: 'Ну, ваш котик от вас еще не сбежал - уже хорошо! Изучите информацию из чек-листа и берегите своего хзвостика, выжродитель!',
+                },
+                middle: {
+                    title: 'Вашему питомцу хорошо, но может быть лучше!',
+                    text: 'Вы не забываете кормить питомца и менять лоток, это хорошо! Но можно улучшить его настроение и здоровье, с помощью советов из нашего чек-листа.',
+                },
+                good: {
+                    title: 'Воу, да вы профи!',
+                    text: 'Ваш котик в надежных руках, мы счастливы за него. У него есть все шансы стать долгожителем! Проявите экспертность, поделитесь своим чек-листом с другом, у которого уровень ухода за питомцем далек от вашего!',
+                },
+            },
+        },
     };
     const [state, dispatch] = useReducer(reducer, initialState);
+
+    function calculateResult(result) {
+        return 'good';
+    }
     
     let slide;
     switch (state.slideNum) {
         case 1:
-            slide = <ResultSlide />;
-            break;
             slide = <Slide1 />;
             break;
         case 2:
@@ -850,7 +882,7 @@ export default function Slides() {
             slide = <SlideQuick questions={state.questions} qIndex={state.slideNum - 2} animal={state.animal} orientation="horizontal" />;
             break;
         case 15:
-            slide = <ResultSlide />
+            slide = <ResultSlide result={state.result} animal={state.animal} calculateResult={calculateResult(state.answerQuestions)} />;
             break;
         default:
             slide = null;
