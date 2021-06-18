@@ -130,32 +130,11 @@
 
         &__share-btn {
 
-            display: block;
-            width: 63px;
-            height: 45px;
             margin-right: 17px;
-            background-repeat: no-repeat;
-            background-position: 0 0;
-            background-size: 100% auto;
 
             &:last-child {
 
                 margin-right: 0;
-            }
-
-            &:nth-child(1) {
-
-                background-image: url('../../imgs/slide1__share-btn-inst.svg');
-            }
-
-            &:nth-child(2) {
-
-                background-image: url('../../imgs/slide1__share-btn-vk.svg');
-            }
-
-            &:nth-child(3) {
-
-                background-image: url('../../imgs/slide1__share-btn-fb.svg');
             }
         }
     }

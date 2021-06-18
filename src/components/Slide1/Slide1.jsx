@@ -41,9 +41,9 @@ export default function Slide1() {
                             Поделись тестом с друзьями:
                         </div>
                         <div className="slide1__share-btns">
-                            <a href="#" className="slide1__share-btn"></a>
-                            <a href="#" className="slide1__share-btn"></a>
-                            <a href="#" className="slide1__share-btn"></a>
+                            <a href="#" className="slide1__share-btn share-btn share-btn_inst"></a>
+                            <a href="#" className="slide1__share-btn share-btn share-btn_vk"></a>
+                            <a href="#" className="slide1__share-btn share-btn share-btn_fb"></a>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import Slide1 from "../Slide1/Slide1";
 import Slide2 from "../Slide2/Slide2";
 import Slide3 from "../Slide3/Slide3";
 import SlideQuick from "../SlideQuick/SlideQuick";
+import ResultSlide from "../ResultSlide/ResultSlide";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -825,6 +826,8 @@ export default function Slides() {
     let slide;
     switch (state.slideNum) {
         case 1:
+            slide = <ResultSlide />;
+            break;
             slide = <Slide1 />;
             break;
         case 2:
@@ -845,6 +848,9 @@ export default function Slides() {
         case 13:
         case 14:
             slide = <SlideQuick questions={state.questions} qIndex={state.slideNum - 2} animal={state.animal} orientation="horizontal" />;
+            break;
+        case 15:
+            slide = <ResultSlide />
             break;
         default:
             slide = null;

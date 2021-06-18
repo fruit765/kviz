@@ -26,3 +26,28 @@ html, body {
     max-width: 1440px;
     margin: 0 auto;
 }
+
+.share-btn {
+
+	display: inline-block;
+	width: 63px;
+	height: 45px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 100% auto;
+
+	&_inst {
+
+		background-image: url('./imgs/slide1__share-btn-inst.svg');
+	}
+
+	&_vk {
+
+		background-image: url('./imgs/slide1__share-btn-vk.svg');
+	}
+
+	&_fb {
+
+		background-image: url('./imgs/slide1__share-btn-fb.svg');
+	}
+}
