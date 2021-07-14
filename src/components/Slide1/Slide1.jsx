@@ -42,8 +42,18 @@ export default function Slide1() {
                         </div>
                         <div className="slide1__share-btns">
                             <a href="#" className="slide1__share-btn share-btn share-btn_inst"></a>
-                            <a href="#" className="slide1__share-btn share-btn share-btn_vk"></a>
-                            <a href="#" className="slide1__share-btn share-btn share-btn_fb"></a>
+                            <a href="#" className="slide1__share-btn share-btn share-btn_vk"
+                                onClick={e => {
+                                    e.preventDefault();
+                                    window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${window.encodeURIComponent('Опрос Квиз')}&image=${window.encodeURIComponent('https://i.pinimg.com/236x/ec/48/d1/ec48d196481d73fdd8be26872c6ec1e7--wallpaper-backgrounds-wallpapers.jpg')}`, 'Опрос Квиз', 'width=640,height=480');
+                                }}
+                            ></a>
+                            <a href="#" className="slide1__share-btn share-btn share-btn_fb"
+                                onClick={e => {
+                                    e.preventDefault();
+                                    window.open(`https://www.facebook.com/sharer.php?u=${window.encodeURIComponent(window.location.href)}`, 'Опрос Квиз', 'width=640,height=480');
+                                }}
+                            ></a>
                         </div>
                     </div>
                 </div>
