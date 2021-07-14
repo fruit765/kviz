@@ -42,7 +42,9 @@ export default function ResultSlide(props) {
                             <div className="result-slide__share">
                                 <a href="#" className="result-slide__share-btn result-slide__share-btn_inst share-btn share-btn_inst"></a>
                                 <a href="#" className="result-slide__share-btn result-slide__share-btn_vk share-btn share-btn_vk"></a>
-                                <a href="#" className="result-slide__share-btn result-slide__share-btn_fb share-btn share-btn_fb"></a>
+                                <a href="#" className="result-slide__share-btn result-slide__share-btn_fb share-btn share-btn_fb">
+                                    <div className="result-slide__share-arrow"></div>
+                                </a>
                             </div>
                         </div>
                         <div className="result-slide__wrapper-send">
@@ -50,7 +52,11 @@ export default function ResultSlide(props) {
                                 Не забудьте свою памятку!
                             </div>
                             <div className="result-slide__wrapper-send-btn">
-                                <NextSlideBtn text="Получить памятку" />
+                                <NextSlideBtn text="Получить памятку"
+                                    callback={() => {
+                                        
+                                    }}
+                                />
                             </div>
                         </div>
                     </div>

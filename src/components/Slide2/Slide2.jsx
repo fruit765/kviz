@@ -6,6 +6,7 @@ import { useContext, useState } from 'react';
 import cl from 'classnames';
 import { SlidesContext } from '../Slides/Slides';
 import SlideNumeration from '../SlideNumeration/SlideNumeration';
+import SlideNumerationText from '../SlideNumeration/SlideNumerationText';
 
 export default function Slide2(props) {
     const question = props.questions[props.qIndex];
@@ -79,6 +80,7 @@ export default function Slide2(props) {
                         />
                     </div>
                     <SlideNumeration count="13" num={props.qIndex + 1}/>
+                    <SlideNumerationText count="13" num={props.qIndex + 1} />
                 </div>
             </div>
         </div>

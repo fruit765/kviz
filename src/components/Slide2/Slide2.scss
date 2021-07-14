@@ -10,7 +10,103 @@
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .slide2 {
+
+        &__front-background {
+
+            min-height: calc(100vh - 70px);
+            background-image: url('../../imgs/front-background.svg');
+            background-repeat: no-repeat;
+            background-position: 50% -100px;
+            background-size: 1280px auto;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 50px;
+        }
+
+        &__wrapper {
+
+            position: relative;
+
+            .slide-numeration-text {
+
+                position: absolute;
+                right: 0;
+                top: -23px;
+            }
+        }
+
+        &__wrapper-title {
+
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 28px;
+            text-align: center;
+            color: #432F21;
+            margin-bottom: 40px;
+        }
+
+        &__wrapper-imgs {
+
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        &__wrapper-img {
+
+            order: 2;
+            flex-basis: 50%;
+
+            img {
+
+                width: 100%;
+            }
+        }
+
+        &__wrapper-answers {
+
+            order: 1;
+            width: 100%;
+            text-align: center;
+        }
+
+        &__wrapper-answer {
+
+            background: #FFFFFF;
+            border: 2px solid #B2B2B2;
+            box-sizing: border-box;
+            border-radius: 15px;
+            width: calc(50% - 6px);
+            max-width: 150px;
+            height: 85px;
+            line-height: 81px;
+            margin-right: 12px;
+            font-size: 20px;
+            padding: 0;
+            cursor: pointer;
+
+            &:last-child {
+
+                margin-right: 0;
+            }
+
+            &_is-pick {
+
+                background-color: #F0AA87;
+            }
+        }
+
+        &__wrapper-btn {
+
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: 768px) {
 
     .slide2 {
 

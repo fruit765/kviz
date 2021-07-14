@@ -5,6 +5,7 @@ import NextSlideBtn from '../NextSlideBtn/NextSlideBtn';
 import { SlidesContext } from '../Slides/Slides';
 import c from 'classnames';
 import SlideNumeration from '../SlideNumeration/SlideNumeration';
+import SlideNumerationText from '../SlideNumeration/SlideNumerationText';
 
 function changeQuestion(q, ai, qi, d) {
     q = {...q};
@@ -90,6 +91,7 @@ export default function SlideCat3(props) {
                         </div>
                     }
                     <SlideNumeration count="13" num={props.qIndex + 1}/>
+                    <SlideNumerationText count="13" num={props.qIndex + 1} />
                 </div>
             </div>
         </div>

@@ -6,3 +6,12 @@
     top: 0;
     left: 0;
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .slides {
+
+        position: static;
+        height: auto;
+    }
+}

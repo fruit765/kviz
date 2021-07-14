@@ -1,0 +1,21 @@
+@media (max-width: 1439px) {
+
+    .slide-numeration-text {
+
+        position: absolute;
+        right: 0;
+        top: -23px;
+        font-size: 18px;
+        height: 23px;
+        line-height: 23px;
+        color: #000;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .slide-numeration-text {
+
+        display: none;
+    }
+}

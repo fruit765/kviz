@@ -9,6 +9,7 @@ import catBad from '../../imgs/slide-quick__inform-img-cat-bad.svg';
 import dogGood from '../../imgs/slide-quick__inform-img-dog-good.svg';
 import dogBad from '../../imgs/slide-quick__inform-img-dog-bad.svg';
 import SlideNumeration from '../SlideNumeration/SlideNumeration';
+import SlideNumerationText from '../SlideNumeration/SlideNumerationText';
 
 export default function SlideQuick(props) {
     const question = props.questions[props.qIndex][props.animal];
@@ -59,15 +60,22 @@ export default function SlideQuick(props) {
     });
 
     let orientation = props.orientation;
+    let orientationVertical;
     if (props.animal === 'cat' && (props.qIndex === 8 || props.qIndex === 9 || props.qIndex === 10 || props.qIndex === 12)) {
         orientation = 'vertical';
     }
     if (props.animal === 'dog' && (props.qIndex === 11 || props.qIndex === 12)) {
         orientation = 'vertical';
     }
+    if (props.animal === 'cat' && (props.qIndex === 5)) {
+        orientationVertical = 'vertical-mobile';
+    }
+    if (props.animal === 'dog' && (props.qIndex === 9)) {
+        orientationVertical = 'vertical-mobile';
+    }
 
     return (
-        <div className={c('slide-quick', `slide-quick_${orientation}`, inform && 'slide-quick_inform')}>
+        <div className={c('slide-quick', `slide-quick_${orientation}`, orientationVertical ? `slide-quick_${orientationVertical}` : '', inform && 'slide-quick_inform')}>
             <div className="slide-quick__front-background">
                 {
                     !inform &&
@@ -77,6 +85,7 @@ export default function SlideQuick(props) {
                             {answers}
                         </div>
                         <SlideNumeration count="13" num={props.qIndex + 1}/>
+                        <SlideNumerationText count="13" num={props.qIndex + 1} />
                     </div>
                 }
                 {
@@ -96,6 +105,7 @@ export default function SlideQuick(props) {
                             />
                         </div>
                         <SlideNumeration count="13" num={props.qIndex + 1}/>
+                        <SlideNumerationText count="13" num={props.qIndex + 1} />
                     </div>
                 }
             </div>
