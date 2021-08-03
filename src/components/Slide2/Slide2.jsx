@@ -1,6 +1,6 @@
 import './Slide2.scss';
-import img1 from '../../imgs/slide2__wrapper-img1.svg';
-import img2 from '../../imgs/slide2__wrapper-img2.svg';
+import img1 from '../../imgs/slide2__wrapper-img1.png';
+import img2 from '../../imgs/slide2__wrapper-img2.png';
 import NextSlideBtn from '../NextSlideBtn/NextSlideBtn';
 import { useContext, useState } from 'react';
 import cl from 'classnames';

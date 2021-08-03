@@ -4,10 +4,10 @@ import { useContext, useState } from "react";
 import { SlidesContext } from "../Slides/Slides";
 import NextSlideBtn from "../NextSlideBtn/NextSlideBtn";
 import c from 'classnames';
-import catGood from '../../imgs/slide-quick__inform-img-cat-good.svg';
-import catBad from '../../imgs/slide-quick__inform-img-cat-bad.svg';
-import dogGood from '../../imgs/slide-quick__inform-img-dog-good.svg';
-import dogBad from '../../imgs/slide-quick__inform-img-dog-bad.svg';
+import catGood from '../../imgs/slide-quick__inform-img-cat-good.png';
+import catBad from '../../imgs/slide-quick__inform-img-cat-bad.png';
+import dogGood from '../../imgs/slide-quick__inform-img-dog-good.png';
+import dogBad from '../../imgs/slide-quick__inform-img-dog-bad.png';
 import SlideNumeration from '../SlideNumeration/SlideNumeration';
 import SlideNumerationText from '../SlideNumeration/SlideNumerationText';
 

@@ -1,12 +1,12 @@
 import './ResultSlide.scss';
 
 import NextSlideBtn from "../NextSlideBtn/NextSlideBtn";
-import resultCatBad from '../../imgs/result-slide__square-img-cat-bad.svg';
-import resultCatMiddle from '../../imgs/result-slide__square-img-cat-middle.svg';
-import resultCatGood from '../../imgs/result-slide__square-img-cat-good.svg';
-import resultDogBad from '../../imgs/result-slide__square-img-dog-bad.svg';
-import resultDogMiddle from '../../imgs/result-slide__square-img-dog-middle.svg';
-import resultDogGood from '../../imgs/result-slide__square-img-dog-good.svg';
+import resultCatBad from '../../imgs/result-slide__square-img-cat-bad.png';
+import resultCatMiddle from '../../imgs/result-slide__square-img-cat-middle.png';
+import resultCatGood from '../../imgs/result-slide__square-img-cat-good.png';
+import resultDogBad from '../../imgs/result-slide__square-img-dog-bad.png';
+import resultDogMiddle from '../../imgs/result-slide__square-img-dog-middle.png';
+import resultDogGood from '../../imgs/result-slide__square-img-dog-good.png';
 
 export default function ResultSlide(props) {
     let img;
