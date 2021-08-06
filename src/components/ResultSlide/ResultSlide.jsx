@@ -8,7 +8,34 @@ import resultDogBad from '../../imgs/result-slide__square-img-dog-bad.png';
 import resultDogMiddle from '../../imgs/result-slide__square-img-dog-middle.png';
 import resultDogGood from '../../imgs/result-slide__square-img-dog-good.png';
 
+import React, { useState } from 'react';
+const axios = require('axios').default;
+
 export default function ResultSlide(props) {
+
+    const [popup, setPopup] = useState(0);
+    const [email, setEmail] = useState(undefined);    
+
+    const sendResults = () => {
+        if(!email || !email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+            alert("Неверный формат Email")
+            return
+        }
+        console.log(
+            props.animal,
+            email,
+            props.result
+        )        
+        axios.post('http://127.0.0.1:3001/result', {
+            animal: props.animal,
+            email: email,
+            result: props.result
+        })
+        setEmail(undefined)
+        setPopup(0)       
+    }
+
+
     let img;
     if (props.animal === 'cat') {
         if (props.calculateResult === 'bad') img = resultCatBad;
@@ -21,8 +48,8 @@ export default function ResultSlide(props) {
         if (props.calculateResult === 'good') img = resultDogGood;
     }
 
-    return (
-        <div className="result-slide">
+    return (        
+        <div className="result-slide">            
             <div className="result-slide__back-background">
                 <div className="result-slide__front-background">
                     <div className="result-slide__wrapper">
@@ -57,17 +84,48 @@ export default function ResultSlide(props) {
                                 </a>
                             </div>
                         </div>
-                        <div className="result-slide__wrapper-send">
+                        <div className="result-slide__wrapper-send">  
+                        {popup === 1 &&                 
+                            <div className = "result-slide-overlay-container">
+                                <div className="result-slide-overlay-container__close-btn-container padding-omni-10">
+                                    <div 
+                                        className="result-slide-overlay-container__close-btn-container__img close-btn"
+                                        onClick = {() => {                                    
+                                            setPopup(0)
+                                        }}>                                
+                                    </div>
+                                </div>
+                                <div className="result-slide__wrapper-send-title padding-hor-20">
+                                    Оставляйте свою почту для получения памятки!
+                                </div>
+                                <div className="result-slide-overlay-container__content padding-omni-20">
+                                    <input 
+                                        className = "result-slide-overlay-container__input input-btn-hor-space input-btn-bottom-space"
+                                        type="text" 
+                                        placeholder = "Ваша почта"
+                                        onChange = {(e) => { setEmail(e.target.value) }}
+                                    />
+                                    <NextSlideBtn text="Отправить"
+                                        callback={() => {   
+                                            sendResults()                                                               
+                                        }}
+                                    />
+                                </div>
+                            </div>                    
+               
+                        }              
+                        {
+                        !popup && <>
                             <div className="result-slide__wrapper-send-title">
                                 Не забудьте свою памятку!
                             </div>
-                            <div className="result-slide__wrapper-send-btn">
+                            <div className="result-slide__wrapper-send-btn">                                
                                 <NextSlideBtn text="Получить памятку"
-                                    callback={() => {
-
-                                    }}
-                                />
-                            </div>
+                                    callback={() => { setPopup(1) }}
+                                />                        
+                            </div> 
+                        </>
+                        }                                                                           
                         </div>
                     </div>
                 </div>
