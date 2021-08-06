@@ -1,8 +1,7 @@
 import Header from "./components/Header/Header";
 import Slides from "./components/Slides/Slides";
 
-import img1 from './imgs/slide1__wrapper-img1.svg';
-import img2 from './imgs/slide1__wrapper-img2.svg';
+import imgFirst from './imgs/slide1__wrapper.png';
 import img3 from './imgs/slide2__wrapper-img1.png';
 import img4 from './imgs/slide2__wrapper-img2.png';
 import img5 from './imgs/slide-quick__inform-img-cat-good.png';
@@ -20,8 +19,7 @@ function App() {
   return (
     <div className="App">
       <div className="preload-imgs">
-        <img src={img1} />
-        <img src={img2} />
+        <img src={imgFirst} />
         <img src={img3} />
         <img src={img4} />
         <img src={img5} />

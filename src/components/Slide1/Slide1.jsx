@@ -1,8 +1,7 @@
 import './Slide1.scss';
 
 import NextSlideBtn from "../NextSlideBtn/NextSlideBtn";
-import img1 from '../../imgs/slide1__wrapper-img1.svg';
-import img2 from '../../imgs/slide1__wrapper-img2.svg';
+import imgFirst from '../../imgs/slide1__wrapper.png';
 import { useContext } from 'react';
 import { SlidesContext } from '../Slides/Slides';
 
@@ -16,10 +15,7 @@ export default function Slide1() {
                     <div className="slide1__wrapper">
                         <div className="slide1__wrapper-imgs">
                             <div className="slide1__wrapper-img">
-                            <img src={img1} />
-                            </div>
-                            <div className="slide1__wrapper-img">
-                                <img src={img2} />
+                                <img src={imgFirst} />
                             </div>
                         </div>
                         <div className="slide1__wrapper-title">
@@ -31,7 +27,7 @@ export default function Slide1() {
                         <div className="slide1__wrapper-btn">
                             <NextSlideBtn text="Пройти тест"
                                 callback={() => {
-                                    dispatch({type: 'CHANGE_SLIDE'});
+                                    dispatch({ type: 'CHANGE_SLIDE' });
                                 }}
                             />
                         </div>
