@@ -24,7 +24,7 @@ export default function Slide1() {
                 <div className="slide1__front-background">
                     <div className="slide1__wrapper">
                         <div className="slide1__wrapper-imgs">
-                        <div className="slide1__wrapper-img">
+                            <div className="slide1__wrapper-img">
                                 <img src={imgFirst} />
                             </div>
                         </div>
@@ -37,7 +37,7 @@ export default function Slide1() {
                         <div className="slide1__wrapper-btn">
                             <NextSlideBtn text="Пройти тест"
                                 callback={() => {
-                                    dispatch({type: 'CHANGE_SLIDE'});
+                                    dispatch({ type: 'CHANGE_SLIDE' });
                                 }}
                             />
                         </div>
@@ -51,30 +51,30 @@ export default function Slide1() {
                             <a href="#" className="slide1__share-btn share-btn share-btn_vk"
                                 onClick={e => {
                                     e.preventDefault();
-                                    window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${window.encodeURIComponent('Karmy Queeeeze')}&image=${window.encodeURIComponent('https://kviz.karmypet.ru/shareImg/slide1__wrapper.png')}`, 'Пройди тест и узнай правильно ли ты растишь своего хвостика, улучши свой уровень владельца и получи чек-лист с советами от ветврача.', 'width=640,height=480');
+                                    window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}`, 'Karmy Queeeeze', 'width=640,height=480');
                                 }}
                             ></a>
                             <a href="#" className="slide1__share-btn share-btn share-btn_fb"
                                 onClick={e => {
-                                    e.preventDefault(); 
+                                    e.preventDefault();
 
                                     // window.open(`https://www.facebook.com/dialog/feed?app_id=2285265608383487&display=page&link=${window.encodeURIComponent('https://kviz.karmypet.ru')}&redirect_uri=https://kviz.karmypet.ru&picture=${window.encodeURIComponent('https://kviz.karmypet.ru/shareImg/result-slide__square-img-cat-bad.png')}`, 'Опрос Квиз', 'width=640,height=480')
 
                                     window.FB.ui(
-                                        {                                            
+                                        {
                                             method: 'share',
                                             href: 'https://kviz.karmypet.ru/',
                                             quote: "Пройди тест и узнай правильно ли ты растишь своего хвостика, улучши свой уровень владельца и получи чек-лист с советами от ветврача."
                                         },
                                         // callback
-                                        function(response) {
-                                        //   if (response && !response.error_message) {
-                                        //     alert('Posting completed.');
-                                        //   } else {
-                                        //     alert('Error while posting.');
-                                        //   }
+                                        function (response) {
+                                            //   if (response && !response.error_message) {
+                                            //     alert('Posting completed.');
+                                            //   } else {
+                                            //     alert('Error while posting.');
+                                            //   }
                                         }
-                                      );
+                                    );
                                     // window.open(`https://www.facebook.com/sharer.php?u=${window.encodeURIComponent("https://kviz.karmypet.ru")}`, '', 'width=640,height=480');
                                     // window.open(`https://www.facebook.com/dialog/share?href=https://kviz.karmypet.ru`)
                                 }}
