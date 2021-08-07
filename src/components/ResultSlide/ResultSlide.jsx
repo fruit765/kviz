@@ -26,7 +26,7 @@ export default function ResultSlide(props) {
             email,
             props.result
         )        
-        axios.post('http://127.0.0.1:3001/result', {
+        axios.post('http://kviz.karmypet.ru/api/result', {
             animal: props.animal,
             email: email,
             result: props.result
