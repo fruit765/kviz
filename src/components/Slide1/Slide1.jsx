@@ -14,6 +14,8 @@ export default function Slide1() {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Karmy Queeeeze</title>   
+                <meta property="og:url"   content="https://kviz.karmypet.ru/" />
+                <meta property="og:type"  content="website" />
                 <meta property="og:title" content="Karmy Queeeeze"></meta>                 
                 <meta property="og:description" content="How much does culture influence creative thinking?" />
                 <meta property="og:image" content="https://kviz.karmypet.ru/shareImg/result-slide__square-img-cat-bad.png"></meta>            
