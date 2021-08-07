@@ -51,7 +51,7 @@ export default function Slide1() {
                             <a href="#" className="slide1__share-btn share-btn share-btn_vk"
                                 onClick={e => {
                                     e.preventDefault();
-                                    window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}`, 'Karmy Queeeeze', 'width=640,height=480');
+                                    window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${window.encodeURIComponent('Пройди тест и узнай правильно ли ты растишь своего хвостика, улучши свой уровень владельца и получи чек-лист с советами от ветврача.')}&image=${window.encodeURIComponent('https://kviz.karmypet.ru/shareImg/slide1__wrapper.png')}`, 'Опрос Квиз', 'width=640,height=480');
                                 }}
                             ></a>
                             <a href="#" className="slide1__share-btn share-btn share-btn_fb"
