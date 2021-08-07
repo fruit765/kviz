@@ -9,7 +9,7 @@ import resultDogMiddle from '../../imgs/result-slide__square-img-dog-middle.png'
 import resultDogGood from '../../imgs/result-slide__square-img-dog-good.png';
 
 import React, { useState, useEffect } from 'react';
-import {Helmet} from "react-helmet";
+// import {Helmet} from "react-helmet";
 const axios = require('axios').default;
 
 export default function ResultSlide(props) {
@@ -73,14 +73,14 @@ export default function ResultSlide(props) {
 
     return (        
         <div className="result-slide"> 
-            <Helmet>
+            {/* <Helmet>
                 <meta charSet="utf-8" />
                 <title>Karmy Queeeeze</title>   
                 <meta property="og:title" content="Karmy Queeeeze"></meta> 
                 <meta property="og:type" content="article" />
                 <meta property="og:description" content="How much does culture influence creative thinking?" />
                 <meta property="og:image" content="https://kviz.karmypet.ru/shareImg/result-slide__square-img-cat-bad.png"></meta>            
-            </Helmet>                      
+            </Helmet>                       */}
             <div className="result-slide__back-background">
                 <div className="result-slide__front-background">
                     <div className="result-slide__wrapper">

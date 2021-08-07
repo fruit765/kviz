@@ -4,14 +4,14 @@ import NextSlideBtn from "../NextSlideBtn/NextSlideBtn";
 import imgFirst from '../../imgs/slide1__wrapper.png';
 import { useContext } from 'react';
 import { SlidesContext } from '../Slides/Slides';
-import {Helmet} from "react-helmet";
+// import {Helmet} from "react-helmet";
 
 export default function Slide1() {
     const dispatch = useContext(SlidesContext);
 
     return (
         <div className="slide1">
-            <Helmet>
+            {/* <Helmet>
                 <meta charSet="utf-8" />
                 <title>Karmy Queeeeze</title>   
                 <meta property="og:url"   content="https://kviz.karmypet.ru/" />
@@ -19,7 +19,7 @@ export default function Slide1() {
                 <meta property="og:title" content="Karmy Queeeeze"></meta>                 
                 <meta property="og:description" content="How much does culture influence creative thinking?" />
                 <meta property="og:image" content="https://kviz.karmypet.ru/shareImg/result-slide__square-img-cat-bad.png"></meta>            
-            </Helmet>
+            </Helmet> */}
             <div className="slide1__back-background">
                 <div className="slide1__front-background">
                     <div className="slide1__wrapper">
@@ -51,7 +51,7 @@ export default function Slide1() {
                             <a href="#" className="slide1__share-btn share-btn share-btn_vk"
                                 onClick={e => {
                                     e.preventDefault();
-                                    window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${window.encodeURIComponent('Опрос Квиз')}&image=${window.encodeURIComponent('https://i.pinimg.com/236x/ec/48/d1/ec48d196481d73fdd8be26872c6ec1e7--wallpaper-backgrounds-wallpapers.jpg')}`, 'Опрос Квиз', 'width=640,height=480');
+                                    window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${window.encodeURIComponent('Karmy Queeeeze')}&image=${window.encodeURIComponent('https://kviz.karmypet.ru/shareImg/slide1__wrapper.png')}`, 'Пройди тест и узнай правильно ли ты растишь своего хвостика, улучши свой уровень владельца и получи чек-лист с советами от ветврача.', 'width=640,height=480');
                                 }}
                             ></a>
                             <a href="#" className="slide1__share-btn share-btn share-btn_fb"
