@@ -8,13 +8,18 @@ import resultDogBad from '../../imgs/result-slide__square-img-dog-bad.png';
 import resultDogMiddle from '../../imgs/result-slide__square-img-dog-middle.png';
 import resultDogGood from '../../imgs/result-slide__square-img-dog-good.png';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {Helmet} from "react-helmet";
 const axios = require('axios').default;
 
 export default function ResultSlide(props) {
 
     const [popup, setPopup] = useState(0);
     const [email, setEmail] = useState(undefined);    
+
+    // useEffect(() => {
+    //    console.log(window.location.href)
+    // }, [])
 
     const sendResults = () => {
         if(!email || !email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
@@ -35,6 +40,24 @@ export default function ResultSlide(props) {
         setPopup(0)       
     }
 
+    const getImgHref = () => {        
+        if (props.animal === 'cat') {
+            if (props.calculateResult === 'bad') 
+                return 'result-slide__square-img-cat-bad.png';
+            if (props.calculateResult === 'middle') 
+                return 'result-slide__square-img-cat-middle.png';
+            if (props.calculateResult === 'good') 
+                return 'result-slide__square-img-cat-good.png';
+        }
+        if (props.animal === 'dog') {
+            if (props.calculateResult === 'bad') 
+                return 'result-slide__square-img-dog-bad.png';
+            if (props.calculateResult === 'middle') 
+                return 'result-slide__square-img-dog-middle.png';
+            if (props.calculateResult === 'good') 
+                return 'result-slide__square-img-dog-good.png';
+        }       
+    }
 
     let img;
     if (props.animal === 'cat') {
@@ -49,7 +72,15 @@ export default function ResultSlide(props) {
     }
 
     return (        
-        <div className="result-slide">            
+        <div className="result-slide"> 
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Karmy Queeeeze</title>   
+                <meta property="og:title" content="Karmy Queeeeze"></meta> 
+                <meta property="og:type" content="article" />
+                <meta property="og:description" content="How much does culture influence creative thinking?" />
+                <meta property="og:image" content="https://kviz.karmypet.ru/shareImg/result-slide__square-img-cat-bad.png"></meta>            
+            </Helmet>                      
             <div className="result-slide__back-background">
                 <div className="result-slide__front-background">
                     <div className="result-slide__wrapper">
@@ -67,17 +98,34 @@ export default function ResultSlide(props) {
                                 <div className="result-slide__square-arrow"></div>
                             </div>
                             <div className="result-slide__share">
-                                <a href="#" className="result-slide__share-btn result-slide__share-btn_inst share-btn share-btn_inst"></a>
+                                {/* <a href="#" className="result-slide__share-btn result-slide__share-btn_inst share-btn share-btn_inst"></a> */}
                                 <a href="#" className="result-slide__share-btn result-slide__share-btn_vk share-btn share-btn_vk"
                                     onClick={e => {
-                                        e.preventDefault();
-                                        window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${window.encodeURIComponent('Опрос Квиз')}&image=${window.encodeURIComponent('https://i.pinimg.com/236x/ec/48/d1/ec48d196481d73fdd8be26872c6ec1e7--wallpaper-backgrounds-wallpapers.jpg')}`, 'Опрос Квиз', 'width=640,height=480');
+                                        e.preventDefault();                                        
+                                        window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${props.result[props.animal][props.calculateResult].title} ${props.result[props.animal][props.calculateResult].text}&image=${window.encodeURIComponent(`https://kviz.karmypet.ru/shareImg/${getImgHref()}`)}`, 'Опрос Квиз', 'width=640,height=480');
                                     }}
                                 ></a>
                                 <a href="#" className="result-slide__share-btn result-slide__share-btn_fb share-btn share-btn_fb"
                                     onClick={e => {
                                         e.preventDefault();
-                                        window.open(`https://www.facebook.com/sharer.php?u=${window.encodeURIComponent(window.location.href)}`, 'Опрос Квиз', 'width=640,height=480');
+
+                                        window.FB.ui(
+                                            {                                            
+                                                method: 'share',
+                                                href: 'https://kviz.karmypet.ru/',
+                                                quote: `${props.result[props.animal][props.calculateResult].title} ${props.result[props.animal][props.calculateResult].text}`
+                                            },
+                                            // callback
+                                            function(response) {
+                                            //   if (response && !response.error_message) {
+                                            //     alert('Posting completed.');
+                                            //   } else {
+                                            //     alert('Error while posting.');
+                                            //   }
+                                            }
+                                          );
+
+                                        // window.open(`https://www.facebook.com/sharer.php?u=${window.encodeURIComponent("https://kviz.karmypet.ru")}`, `sdfsdfsdf`, 'width=640,height=480');
                                     }}
                                 >
                                     <div className="result-slide__share-arrow"></div>
