@@ -91,9 +91,9 @@
 
     &__back-background {
 
-        background-image: url('../../imgs/result-slide__back-background.svg');
+        background-image: url('../../imgs/back-background.svg');
         background-repeat: no-repeat;
-        background-position: calc(50% - 110px) calc(50% + 70px);
+        background-position: calc(50% - 110px) calc(50%);
         background-size: 1719px auto;
     }
 
@@ -269,7 +269,7 @@
 
         &__back-background {
 
-            background-position: calc(50% - 110px) calc(50% + 70px);
+            background-position: calc(50% - 110px) calc(50%);
             background-size: 1600px auto;
         }
 
@@ -375,7 +375,7 @@
 
         &__back-background {
 
-            background-position: calc(50%) calc(50%);
+            background-position: calc(50%) calc(50% - 70px);
             background-size: 1400px auto;
         }
 
