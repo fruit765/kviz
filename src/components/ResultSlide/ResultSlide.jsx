@@ -15,14 +15,14 @@ const axios = require('axios').default;
 export default function ResultSlide(props) {
 
     const [popup, setPopup] = useState(0);
-    const [email, setEmail] = useState(undefined);    
+    const [email, setEmail] = useState(undefined);
 
     // useEffect(() => {
     //    console.log(window.location.href)
     // }, [])
 
     const sendResults = () => {
-        if(!email || !email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+        if (!email || !email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
             alert("Неверный формат Email")
             return
         }
@@ -30,33 +30,33 @@ export default function ResultSlide(props) {
             props.animal,
             email,
             props.result
-        )        
+        )
         axios.post('https://kviz.karmypet.ru/api/result', {
             animal: props.animal,
             email: email,
             result: props.result
         })
         setEmail(undefined)
-        setPopup(0)       
+        setPopup(2)
     }
 
-    const getImgHref = () => {        
+    const getImgHref = () => {
         if (props.animal === 'cat') {
-            if (props.calculateResult === 'bad') 
+            if (props.calculateResult === 'bad')
                 return 'result-slide__square-img-cat-bad.png';
-            if (props.calculateResult === 'middle') 
+            if (props.calculateResult === 'middle')
                 return 'result-slide__square-img-cat-middle.png';
-            if (props.calculateResult === 'good') 
+            if (props.calculateResult === 'good')
                 return 'result-slide__square-img-cat-good.png';
         }
         if (props.animal === 'dog') {
-            if (props.calculateResult === 'bad') 
+            if (props.calculateResult === 'bad')
                 return 'result-slide__square-img-dog-bad.png';
-            if (props.calculateResult === 'middle') 
+            if (props.calculateResult === 'middle')
                 return 'result-slide__square-img-dog-middle.png';
-            if (props.calculateResult === 'good') 
+            if (props.calculateResult === 'good')
                 return 'result-slide__square-img-dog-good.png';
-        }       
+        }
     }
 
     let img;
@@ -71,8 +71,8 @@ export default function ResultSlide(props) {
         if (props.calculateResult === 'good') img = resultDogGood;
     }
 
-    return (        
-        <div className="result-slide"> 
+    return (
+        <div className="result-slide">
             {/* <Helmet>
                 <meta charSet="utf-8" />
                 <title>Karmy Queeeeze</title>   
@@ -101,7 +101,7 @@ export default function ResultSlide(props) {
                                 {/* <a href="#" className="result-slide__share-btn result-slide__share-btn_inst share-btn share-btn_inst"></a> */}
                                 <a href="#" className="result-slide__share-btn result-slide__share-btn_vk share-btn share-btn_vk"
                                     onClick={e => {
-                                        e.preventDefault();                                        
+                                        e.preventDefault();
                                         window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${props.result[props.animal][props.calculateResult].title} ${props.result[props.animal][props.calculateResult].text}&image=${window.encodeURIComponent(`https://kviz.karmypet.ru/shareImg/${getImgHref()}`)}`, 'Опрос Квиз', 'width=640,height=480');
                                     }}
                                 ></a>
@@ -110,20 +110,20 @@ export default function ResultSlide(props) {
                                         e.preventDefault();
 
                                         window.FB.ui(
-                                            {                                            
+                                            {
                                                 method: 'share',
                                                 href: 'https://kviz.karmypet.ru/',
                                                 quote: `${props.result[props.animal][props.calculateResult].title} ${props.result[props.animal][props.calculateResult].text}`
                                             },
                                             // callback
-                                            function(response) {
-                                            //   if (response && !response.error_message) {
-                                            //     alert('Posting completed.');
-                                            //   } else {
-                                            //     alert('Error while posting.');
-                                            //   }
+                                            function (response) {
+                                                //   if (response && !response.error_message) {
+                                                //     alert('Posting completed.');
+                                                //   } else {
+                                                //     alert('Error while posting.');
+                                                //   }
                                             }
-                                          );
+                                        );
 
                                         // window.open(`https://www.facebook.com/sharer.php?u=${window.encodeURIComponent("https://kviz.karmypet.ru")}`, `sdfsdfsdf`, 'width=640,height=480');
                                     }}
@@ -132,48 +132,53 @@ export default function ResultSlide(props) {
                                 </a>
                             </div>
                         </div>
-                        <div className="result-slide__wrapper-send">  
-                        {popup === 1 &&                 
-                            <div className = "result-slide-overlay-container">
-                                <div className="result-slide-overlay-container__close-btn-container padding-omni-10">
-                                    <div 
-                                        className="result-slide-overlay-container__close-btn-container__img close-btn"
-                                        onClick = {() => {                                    
-                                            setPopup(0)
-                                        }}>                                
+                        <div className="result-slide__wrapper-send">
+                            {popup === 1 &&
+                                <div className="result-slide-overlay-container">
+                                    <div className="result-slide-overlay-container__close-btn-container padding-omni-10">
+                                        <div
+                                            className="result-slide-overlay-container__close-btn-container__img close-btn"
+                                            onClick={() => {
+                                                setPopup(0)
+                                            }}>
+                                        </div>
+                                    </div>
+                                    <div className="result-slide__wrapper-send-title padding-hor-20">
+                                        Оставляйте свою почту для получения памятки!
+                                </div>
+                                    <div className="result-slide-overlay-container__content padding-omni-20">
+                                        <input
+                                            className="result-slide-overlay-container__input input-btn-hor-space input-btn-bottom-space"
+                                            type="text"
+                                            placeholder="Ваша почта"
+                                            onChange={(e) => { setEmail(e.target.value) }}
+                                        />
+                                        <NextSlideBtn text="Отправить"
+                                            callback={() => {
+                                                sendResults()
+                                            }}
+                                        />
                                     </div>
                                 </div>
-                                <div className="result-slide__wrapper-send-title padding-hor-20">
-                                    Оставляйте свою почту для получения памятки!
+
+                            }
+                            {popup === 2 &&
+                                <div className="result-slide__wrapper-send-title">
+                                        Отправлено
                                 </div>
-                                <div className="result-slide-overlay-container__content padding-omni-20">
-                                    <input 
-                                        className = "result-slide-overlay-container__input input-btn-hor-space input-btn-bottom-space"
-                                        type="text" 
-                                        placeholder = "Ваша почта"
-                                        onChange = {(e) => { setEmail(e.target.value) }}
-                                    />
-                                    <NextSlideBtn text="Отправить"
-                                        callback={() => {   
-                                            sendResults()                                                               
-                                        }}
-                                    />
-                                </div>
-                            </div>                    
-               
-                        }              
-                        {
-                        !popup && <>
-                            <div className="result-slide__wrapper-send-title">
-                                Не забудьте свою памятку!
+                            }
+                            {
+                                !popup && <>
+                                    <div className="result-slide__wrapper-send-title">
+                                        Не забудьте свою памятку!
                             </div>
-                            <div className="result-slide__wrapper-send-btn">                                
-                                <NextSlideBtn text="Получить памятку"
-                                    callback={() => { setPopup(1) }}
-                                />                        
-                            </div> 
-                        </>
-                        }                                                                           
+                                    <div className="result-slide__wrapper-send-btn">
+                                        <NextSlideBtn text="Получить памятку"
+                                            callback={() => { setPopup(1) }}
+                                        />
+                                    </div>
+                                </>
+                            }
                         </div>
                     </div>
                 </div>
