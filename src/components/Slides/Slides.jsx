@@ -43,11 +43,11 @@ export default function Slides() {
                 type: 'inform',
                 answers: [
                     {
-                        title: 'Кошка-картошка',
+                        title: 'Кошка картошка',
                         isPick: false,
                     },
                     {
-                        title: 'Собака-играка',
+                        title: 'Собака играка',
                         isPick: false,
                     },
                 ],
