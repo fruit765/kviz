@@ -79,8 +79,8 @@ export default function Slide2(props) {
                             }}
                         />
                     </div>
-                    <SlideNumeration count="13" num={props.qIndex + 1}/>
-                    <SlideNumerationText count="13" num={props.qIndex + 1} />
+                    <SlideNumeration count="14" num={props.qIndex + 1}/>
+                    <SlideNumerationText count="14" num={props.qIndex + 1} />
                 </div>
             </div>
         </div>

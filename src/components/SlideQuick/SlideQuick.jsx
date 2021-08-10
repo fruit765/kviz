@@ -84,8 +84,8 @@ export default function SlideQuick(props) {
                         <div className="slide-quick__answers">
                             {answers}
                         </div>
-                        <SlideNumeration count="13" num={props.qIndex + 1}/>
-                        <SlideNumerationText count="13" num={props.qIndex + 1} />
+                        <SlideNumeration count="14" num={props.qIndex + 1}/>
+                        <SlideNumerationText count="14" num={props.qIndex + 1} />
                     </div>
                 }
                 {
@@ -104,8 +104,8 @@ export default function SlideQuick(props) {
                                 }}
                             />
                         </div>
-                        <SlideNumeration count="13" num={props.qIndex + 1}/>
-                        <SlideNumerationText count="13" num={props.qIndex + 1} />
+                        <SlideNumeration count="14" num={props.qIndex + 1}/>
+                        <SlideNumerationText count="14" num={props.qIndex + 1} />
                     </div>
                 }
             </div>
