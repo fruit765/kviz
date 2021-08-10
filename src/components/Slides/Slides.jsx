@@ -236,12 +236,12 @@ export default function Slides() {
                         {
                             title: 'Да',
                             isPick: false,
-                            isRight: true,
+                            isRight: false,
                         },
                         {
                             title: 'Нет',
                             isPick: false,
-                            isRight: false,
+                            isRight: true,
                         },
                     ],
                     inform: {
@@ -667,7 +667,7 @@ export default function Slides() {
                             isRight: false,
                         },
                         {
-                            title: 'Раз в 2 месяца',
+                            title: '2 раза в месяц',
                             isPick: false,
                             isRight: true,
                         },
