@@ -955,7 +955,7 @@ export default function Slides() {
         case 13:
         case 14:
         case 15:
-            slide = <SlideQuick questions={state.questions} qIndex={state.slideNum - 2} animal={state.animal} orientation="horizontal" />;
+            slide = <SlideQuick questions={state.questions} qIndex={state.slideNum - 2} animal={state.animal} orientation="vertical" />;
             break;
         case 16:
             slide = <ResultSlide result={state.result} animal={state.animal} calculateResult={calculateResult(state.answerQuestions)} />;
