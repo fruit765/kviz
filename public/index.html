@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:url" content="https://kviz.karmypet.ru/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Karmy Queeeeze">
-    <meta property="fb:app_id" content="2285265608383487">
-    <meta property="og:description" content="Считаешь, что ты хороший хозяин? А если проверим?">
-    <meta property="og:image" content="https://kviz.karmypet.ru/shareImg/slide1__wrapper.png">    
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
-  <script>
-    window.fbAsyncInit = function() {     
+
+<head>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function() { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(83898685, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/83898685" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:url" content="https://kviz.karmypet.ru/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karmy Queeeeze">
+  <meta property="fb:app_id" content="2285265608383487">
+  <meta property="og:description" content="Считаешь, что ты хороший хозяин? А если проверим?">
+  <meta property="og:image" content="https://kviz.karmypet.ru/shareImg/slide1__wrapper.png">
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+<script>
+  window.fbAsyncInit = function () {
     FB.init({
-      appId      : '2285265608383487',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v11.0'
+      appId: '2285265608383487',
+      autoLogAppEvents: true,
+      xfbml: true,
+      version: 'v11.0'
     });
     FB.AppEvents.logPageView();
-  };  
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  };
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 </html>
