@@ -186,7 +186,7 @@ export default function ResultSlide(props) {
             <div className="result-slide__site">
                 <div className="result-slide__site-wrapper section">
                     <span>
-                        Выбирайте подходящий корм и радуйте любимца полезными вкусностями <a href="https://karmypet.ru/?utm_source=external_paid&utm_medium=url_article&utm_campaign=kviz_karmy&utm_content=article_kak_i_zhil" target="_blank">на сайте Karmy</a>
+                        Выбирайте подходящий корм и радуйте любимца полезными вкусностями <a href="https://karmypet.ru/" target="_blank">на сайте Karmy</a>
                     </span>
                 </div>
             </div>
