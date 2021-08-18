@@ -436,9 +436,13 @@
 
     .result-slide {
 
+        span {
+            width: auto
+        }
+
         &__front-background {
 
-            height: calc(100vh - 70px);
+            // height: calc(100vh - 70px);
             padding-left: 0;
             padding-right: 0;
             background: none;
@@ -548,9 +552,9 @@
             }
         }
 
-        &__site {
+        // &__site {
 
-            display: none;
-        }
+        //     display: none;
+        // }
     }
 }
