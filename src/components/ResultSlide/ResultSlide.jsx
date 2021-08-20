@@ -102,7 +102,7 @@ export default function ResultSlide(props) {
                                 <a href="#" className="result-slide__share-btn result-slide__share-btn_vk share-btn share-btn_vk"
                                     onClick={e => {
                                         e.preventDefault();
-                                        window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${props.result[props.animal][props.calculateResult].title} ${props.result[props.animal][props.calculateResult].text}&image=${window.encodeURIComponent(`https://kviz.karmypet.ru/shareImg/${getImgHref()}`)}`, 'Опрос Квиз', 'width=640,height=480');
+                                        window.open(`https://vk.com/share.php?url=${window.encodeURIComponent(window.location.href)}&title=${props.result[props.animal][props.calculateResult].title} ${props.result[props.animal][props.calculateResult].text.match(/^.*?\./gi)[0]}&image=${window.encodeURIComponent(`https://kviz.karmypet.ru/shareImg/${getImgHref()}`)}`, 'Опрос Квиз', 'width=640,height=480');
                                     }}
                                 ></a>
                                 <a href="#" className="result-slide__share-btn result-slide__share-btn_fb share-btn share-btn_fb"
